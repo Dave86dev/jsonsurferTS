@@ -4,5 +4,5 @@ export interface ArrayComponentProps {
 }
 
 export interface ObjectComponentProps {
-    object: { [key: string]: unknown } 
+    data: { [key: string]: unknown } 
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import { JsonRender } from '../JsonRender/JsonRender'
 
-export const ObjectsRender: React.FC<{ data: Record<string, unknown> }> = ({ data }) => {
+import { ObjectComponentProps } from '../../interfaces'
+
+export const ObjectsRender: React.FC<ObjectComponentProps> = ({ data }) => {
   return (
     <div>
       {Object.entries(data).map(([key, value]) => (

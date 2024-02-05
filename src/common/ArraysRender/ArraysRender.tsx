@@ -1,7 +1,9 @@
 import React from 'react';
 import { JsonRender } from '../JsonRender/JsonRender'
 
-export const ArraysRender: React.FC<{ data: unknown[] }> = ({ data }) => {
+import { ArrayComponentProps } from '../../interfaces';
+
+export const ArraysRender: React.FC<ArrayComponentProps> = ({ data }) => {
   return (
     <ul>
       {data.map((item, index) => (

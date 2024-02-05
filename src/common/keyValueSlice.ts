@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Value } from '../interfaces';
 
 const initialState: Value = {
-  key: "",
+  path: "",
   value: "",
 };
 
@@ -12,7 +12,7 @@ export const valueSlice = createSlice({
   initialState,
   reducers: {
     setKeyValue: (state, action: PayloadAction<Value>) => {
-      state.key = action.payload.key;
+      state.path = action.payload.path;
       state.value = action.payload.value;
     },
   },

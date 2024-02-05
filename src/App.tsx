@@ -7,16 +7,19 @@ import { RootState } from "./app/store";
 import { useEffect } from "react";
 
 function App() {
-  const { key, value } = useSelector((state: RootState) => state.keyValue);
+  const { path, value } = useSelector((state: RootState) => state.keyValue);
 
   useEffect(() => {
-    console.log(key, value);
+    console.log(path, value);
   }, [value]);
 
   return (
     <div className="mainContainer">
       <div className="jsonContainer">
-        <JsonRender data={jsonData as unknown} depth={0} />
+        <JsonRender 
+          data={jsonData as unknown} 
+          depth={0} 
+          actualRoute = "" />
       </div>
     </div>
   );

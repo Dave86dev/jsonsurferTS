@@ -2,16 +2,19 @@
 export interface JsonRenderProps {
     data: unknown
     depth: number
+    actualRoute: string
 }
 
 export interface ArrayComponentProps {
     data: unknown[]
     depth: number
+    actualRoute: string
 }
 
 export interface ObjectComponentProps {
     data: { [key: string]: unknown } 
     depth: number
+    actualRoute: string
 }
 
 export interface PrimitivesComponentProps {
@@ -19,6 +22,6 @@ export interface PrimitivesComponentProps {
 }
 
 export interface Value {
-    key: string
+    path: string
     value: string
   }

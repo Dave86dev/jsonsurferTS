@@ -1,18 +1,23 @@
 import React from "react"
 import { JsonRender } from "../JsonRender/JsonRender"
-
 import { ObjectComponentProps } from "../../interfaces"
-
 import "./ObjectsRender.css"
+
+//RDX
+import { useDispatch } from 'react-redux'
+import { setKeyValue } from "../keyValueSlice"
 
 export const ObjectsRender: React.FC<ObjectComponentProps> = ({
   data,
   depth,
 }) => {
 
-  const clickHandler = (data: string) => {
-    console.log(data)
-  }
+//const value = useSelector((state: RootState) => state.value.value);
+  const dispatch = useDispatch();
+
+  const clickHandler = (key: string, value: string) => { // Adjust types as needed
+    dispatch(setKeyValue({ key, value }));
+  };
 
   return (
     <span>
@@ -22,7 +27,7 @@ export const ObjectsRender: React.FC<ObjectComponentProps> = ({
         <span key={key} style={{ paddingLeft: `${depth * 1.2}em` }}>
           <span
             className={Array.isArray(value) ? "" : "elementClick"}
-            onClick={() => (typeof value !== "object" || value === null) && clickHandler(String(value))}
+            onClick={() => (typeof value !== "object" || value === null) && clickHandler(String(key), String(value))}
           >
             {key}:
           </span>

@@ -17,3 +17,8 @@ export interface ObjectComponentProps {
 export interface PrimitivesComponentProps {
     data: unknown
 }
+
+export interface Value {
+    key: string
+    value: string
+  }

@@ -9,6 +9,11 @@ export const ObjectsRender: React.FC<ObjectComponentProps> = ({
   data,
   depth,
 }) => {
+
+  const clickHandler = (data: string) => {
+    console.log(data)
+  }
+
   return (
     <span>
       {depth === 0 ? "" : "{"}
@@ -16,7 +21,8 @@ export const ObjectsRender: React.FC<ObjectComponentProps> = ({
       {Object.entries(data).map(([key, value], index) => (
         <span key={key} style={{ paddingLeft: `${depth * 1.2}em` }}>
           <span
-            className={Array.isArray(data) ? "" : "elementClick"}
+            className={Array.isArray(value) ? "" : "elementClick"}
+            onClick={() => (typeof value !== "object" || value === null) && clickHandler(String(value))}
           >
             {key}:
           </span>

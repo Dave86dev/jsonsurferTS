@@ -1,17 +1,32 @@
 body {
   margin: 0;
   padding: 0;
+}
 
+.mainContainer {
   height: 100vh;
   width: 100vw;
 
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
 }
 
-.mainContainer {
+.jsonContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: left;
   margin-left: 1em;
+
+  height: 25em;
+  width: 45em;
+  overflow-y: auto;
+  overflow-x: auto;
+
+  padding: 0em 0em 0.5em 0.5em;
+
+  border-radius: 0.5em;
+  border: 0.05em solid grey;
 }

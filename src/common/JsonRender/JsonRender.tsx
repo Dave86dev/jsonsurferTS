@@ -5,11 +5,11 @@ import { PrimitivesRender } from '../PrimitivesRender/PrimitivesRender'
 
 import { JsonRenderProps } from '../../interfaces'
 
-export const JsonRender: React.FC<JsonRenderProps> = ({ data, depth }) => {
+export const JsonRender: React.FC<JsonRenderProps> = ({ data, depth, actualRoute }) => {
   if (Array.isArray(data)) {
-    return <ArraysRender data={data} depth={depth} />
+    return <ArraysRender data={data} depth={depth} actualRoute={actualRoute}/>
   } else if (typeof data === 'object' && data !== null) {
-    return <ObjectsRender data={data as Record<string, unknown>} depth={depth} />
+    return <ObjectsRender data={data as Record<string, unknown>} depth={depth} actualRoute={actualRoute}/>
   } else {
     return <PrimitivesRender data={data} />
   }

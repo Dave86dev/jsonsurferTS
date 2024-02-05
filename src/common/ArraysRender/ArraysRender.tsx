@@ -1,15 +1,25 @@
-import React from 'react';
-import { JsonRender } from '../JsonRender/JsonRender'
+import React from "react";
+import { JsonRender } from "../JsonRender/JsonRender";
 
-import { ArrayComponentProps } from '../../interfaces';
+import { ArrayComponentProps } from "../../interfaces";
 
-export const ArraysRender: React.FC<ArrayComponentProps> = ({ data }) => {
+export const ArraysRender: React.FC<ArrayComponentProps> = ({
+  data,
+  depth,
+}) => {
   return (
-    <ul>
+    <span>
+      [<br />
       {data.map((item, index) => (
-        <li key={index}><JsonRender data={item} /></li>
+        <span key={index}>
+          <span style={{ paddingLeft: `${depth * 1.2}em` }}>
+            <JsonRender data={item} depth={depth + 1} />
+          </span>
+          {index < data.length - 1 ? "," : ""}
+          <br />
+        </span>
       ))}
-    </ul>
+      <span style={{ paddingLeft: `${depth - 1 * 1.2}em` }}>]</span>
+    </span>
   );
 };
-

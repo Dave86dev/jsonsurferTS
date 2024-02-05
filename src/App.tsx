@@ -6,8 +6,7 @@ function App() {
 
   return (
     <>
-      <>Let's code like numero uno</>
-      <JsonRender data={jsonData as unknown}/>
+      <JsonRender data={jsonData as unknown} depth={0}/>
     </>
   )
 }

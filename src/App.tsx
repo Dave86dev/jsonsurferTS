@@ -6,11 +6,16 @@ import jsonData from "./data/demoData.json";
 import { useSelector } from "react-redux";
 import { RootState } from "./app/store";
 import { useDispatch } from "react-redux";
-import { clearKeyValue } from "./common/keyValueSlice";
+import { clearKeyValue, setValue } from "./common/keyValueSlice";
+import { JsonExplorer } from "./utils/JsonExplorer";
+import { JsonSearchProps } from "./interfaces";
 
 function App() {
   const { path, value } = useSelector((state: RootState) => state.keyValue);
   const [criteria, setCriteria] = useState<string>("");
+
+  const params: JsonSearchProps = { data: jsonData, criteria: criteria };
+
 
   const dispatch = useDispatch();
 
@@ -18,11 +23,13 @@ function App() {
     if (criteria === "") {
       dispatch(clearKeyValue());
     } else {
-      console.log("here we search....");
-      /*
-        future use of setValue only, ....
-      
-      */
+
+      const result = JsonExplorer(params)
+
+      const valueToSet = result === "" ? "undefined" : result;
+
+      dispatch(setValue(valueToSet))
+
     }
   }, [criteria]);
 

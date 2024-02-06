@@ -15,9 +15,16 @@ export const valueSlice = createSlice({
       state.path = action.payload.path;
       state.value = action.payload.value;
     },
+    setValue: (state, action: PayloadAction<string>) => {
+      state.value = action.payload;
+    },
+    clearKeyValue: (state) => {
+      state.path = "";
+      state.value = "";
+    },
   },
 });
 
-export const { setKeyValue } = valueSlice.actions;
+export const { setKeyValue, setValue, clearKeyValue } = valueSlice.actions;
 
 export default valueSlice.reducer;

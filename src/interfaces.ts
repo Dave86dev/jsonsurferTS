@@ -1,4 +1,15 @@
 
+export interface JsonSearchProps {
+    data: unknown
+    criteria: string
+}
+
+export interface RecursiveSearchProps {
+    data: unknown
+    actualRoute: string
+    criteria: string
+}
+
 export interface JsonRenderProps {
     data: unknown
     depth: number

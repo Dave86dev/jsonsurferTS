@@ -36,10 +36,11 @@ function App() {
   return (
     <div className="mainContainer">
       <div className="answer">
-        <h4>Property</h4>
         <input
           className="input"
           type="text"
+          autoCorrect="off"
+          spellCheck="false"
           value={criteria || path || ""}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
             setCriteria(e.target.value)
@@ -47,7 +48,6 @@ function App() {
         />
         <div className="value">{value}</div>
       </div>
-      <h4>Response</h4>
       <div className="jsonContainer">
         <JsonRender data={jsonData as unknown} depth={0} actualRoute="" />
       </div>

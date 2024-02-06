@@ -1,5 +1,9 @@
 
 .elementClick {
-    color: blue;
+    color: #fb7e14;
+}
+
+.elementClick:hover {
     cursor: pointer;
+    color: red;
 }

@@ -2,7 +2,9 @@
 
 Originally, I developed JsonSurfer in JavaScript to read and navigate JSON files. While functional, JsonSurfer lacked the polished UI design I envisioned. Recognizing this, I decided to rebuild the application in React, now focusing on a more sophisticated UI that displays JSON with proper indentation and highlights key-value pairs efficiently. The dynamic search functionality also received an upgrade, allowing for comprehensive file scanning.
 
-To ensure a more robust and strongly typed application, I undertook a refactor to TypeScript. This move significantly enhanced the app's reliability and maintainability, leveraging TypeScript's static typing to improve performance and user experience beyond JsonSurfer's original capabilities. This step forward in development approach showcases my commitment to delivering an intuitive and high-quality application. Enjoy!
+To ensure a more robust and strongly typed application, I undertook a refactor to TypeScript. This move significantly enhanced the app's reliability and maintainability, leveraging TypeScript's static typing to improve performance and user experience beyond JsonSurfer's original capabilities. This step forward in development approach showcases my commitment to delivering an intuitive and high-quality application.
+
+But beware! Something bigger, better and specially faster is coming! ;) Stay tuned!
 
 <p align="center">
   <img src="https://i.ibb.co/C8Djpb3/screen1.png" alt="Screen 1" title="Screen 1">
@@ -15,7 +17,6 @@ To ensure a more robust and strongly typed application, I undertook a refactor t
 - [Production](#production)
 - [Installation](#installation)
 - [Functionality / Code Decisions](#functionality)
-- [Known Bugs](#known-bugs)
 - [To Improve](#to-improve)
 - [Author](#author)
 
@@ -51,13 +52,9 @@ The application separates the rendering and search functionalities to maintain c
 
 In essence, this TypeScript-driven approach, coupled with a recursive rendering pattern, delivers a powerful, user-friendly application capable of handling complex JSON structures.
 
-## Known bugs
-
-- **Stablishing error handling on empty or faulty JSON files:** During the development of this application, I encountered a challenge where I tried to implement a system within the function that renders the application. This system was meant to check whether the JSON input to the functional component containing this function is empty or corrupt. I consistently attempted this outside the recursive function (due to its nature, encountering primitive values might be misinterpreted as a non-JSON entity). However, even when trying the method of stringify-ing followed by parsing, and returning an error message to the user in case of a failure, all within an appropriate try-catch block, the application still crashed unacceptably. I will continue to investigate this matter. 
-
 ## To improve 
 
-- **Improved efficiency for reading properly large JSON files:** While it's true that the recursive function is a method I've considered most suitable for accomplishing this technical task, it's well-known that this technique may require additional optimization when it comes to loading very large JSON files. Recursive functions utilize stack memory, with each recursive call adding a new layer to the stack. This can be problematic for deeply nested or very large JSON files, as it increases the risk of encountering a stack overflow error. To enhance performance when working with extremely large JSON files, techniques such as chunking or streaming are being considered for implementation in due time.
+- **10/02/2024 - Improved efficiency for reading properly large JSON files:** As a measure to achieve total optimization, an alternative to the recursive method is already underway, along with a better design, also with the possibility of reading external JSON loaded by the user from the interface. I hope to be able to show you this new application soon. For the moment, both with JsonSurferJs and JsonSurferTS, the goal of establishing the foundations for this new and exciting project has been achieved.
 
 ## Author
 
